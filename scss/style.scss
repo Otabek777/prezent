@@ -73,7 +73,7 @@ ul, ol {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 100px 16px;
 }
 h2 {
   margin-bottom: 50px;
@@ -339,8 +339,8 @@ h2 {
   display: flex;
   flex-direction: column;
   position: fixed;
-  bottom: 40px;
-  right: 24px;
+  bottom: 50px;
+  right: 44px;
   .open {
     display: flex;
     align-items: center;
@@ -711,39 +711,42 @@ form {
   .header-mobile, .page-mobile {
     display: block;
   }
-
+  .button__AT9qX {
+    width: 50px !important;
+    height: 50px !important;
+  }
   .btn-soc {
-    bottom: 24px;
-    right: 20px;
+    bottom: 84px;
+    right: 22px;
   }
   .btn-soc .open {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 14px;
   }
   .btn-soc .open img {
     width: 16px;
   }
   .btn-soc .up {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
   }
   .btn-soc .up::after {
     width: 12px;
     height: 12px
   }
   .btn-soc .soc {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
   .btn-soc.active .soc3 {
     transform: translate(-50%, -60px);
   }
   .btn-soc.active .soc2 {
-    transform: translate(-50%, -106px);
+    transform: translate(-50%, -110px);
   }
   .btn-soc.active .soc1 {
-    transform: translate(-50%, -150px);
+    transform: translate(-50%, -158px);
   }
   .btn-soc .phone {
     left: -180px;
