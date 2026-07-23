@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h2>Number</h2>
+        <input type="text" class="number number-uz" placeholder="Введите номер телефона">
+        <input type="text" class="number number-uz" placeholder="+998 __ ___ __ __">
+    </div>
+    <script src="js/main.js"></script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.querySelector(".number-uz");
+
+            input.addEventListener("input", formatPhone);
+
+            function formatPhone(e) {
+                let value = e.target.value.replace(/\D/g, "");
+
+                // Убираем код страны, если ввели его
+                if (value.startsWith("998")) {
+                    value = value.slice(3);
+                }
+
+                value = value.substring(0, 9);
+
+                let formatted = "+998";
+
+                if (value.length) formatted += " " + value.slice(0, 2);
+                if (value.length > 2) formatted += " " + value.slice(2, 5);
+                if (value.length > 5) formatted += " " + value.slice(5, 7);
+                if (value.length > 7) formatted += " " + value.slice(7, 9);
+
+                e.target.value = formatted;
+            }
+
+            input.addEventListener("focus", () => {
+                if (!input.value) {
+                    input.value = "+998 ";
+                }
+            });
+
+            input.addEventListener("keydown", (e) => {
+                if (
+                    e.key === "Backspace" &&
+                    input.selectionStart <= 5
+                ) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll(".number-uz");
+
+            inputs.forEach(input => {
+
+                input.addEventListener("input", formatPhone);
+
+                input.addEventListener("focus", () => {
+                    if (!input.value) {
+                        input.value = "+998 ";
+                    }
+                });
+
+                input.addEventListener("keydown", (e) => {
+                    if (
+                        e.key === "Backspace" &&
+                        input.selectionStart <= 5
+                    ) {
+                        e.preventDefault();
+                    }
+                });
+
+            });
+
+            function formatPhone(e) {
+                let value = e.target.value.replace(/\D/g, "");
+
+                // Убираем код страны, если ввели его
+                if (value.startsWith("998")) {
+                    value = value.slice(3);
+                }
+
+                // Только 9 цифр после +998
+                value = value.substring(0, 9);
+
+                let formatted = "+998";
+
+                if (value.length > 0) formatted += " " + value.slice(0, 2);
+                if (value.length > 2) formatted += " " + value.slice(2, 5);
+                if (value.length > 5) formatted += " " + value.slice(5, 7);
+                if (value.length > 7) formatted += " " + value.slice(7, 9);
+
+                e.target.value = formatted;
+            }
+        });
+    </script>
+</body>
+</html>
