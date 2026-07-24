@@ -20,3 +20,11 @@ upButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+const $btnSoc = $('.btn-soc');
+
+if ($btnSoc.length) {
+    $(window).on('scroll', function () {
+        $btnSoc.toggleClass('scroll', $(this).scrollTop() >= $(this).height());
+    });
+}
